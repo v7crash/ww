@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediction Bot</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #121212; /* خلفية سوداء داكنة */
+      color: #f0f0f0; /* لون النص */
+    }
+
+    h1 {
+      color: #ffd700; /* لون ذهبي فاخر */
+      text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700; /* تأثير متوهج */
+      text-align: center; /* محاذاة النص في المنتصف */
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #121212; /* لون النص داخل الزر */
+      background-color: #ffd700; /* لون ذهبي فاخر */
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(255, 215, 0, 0.6); /* تأثير ظل */
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #e6c200; /* لون أغمق قليلاً عند التمرير */
+      box-shadow: 0 6px 15px rgba(255, 215, 0, 0.8); /* زيادة تأثير الظل */
+      transform: scale(1.05); /* تكبير طفيف عند التمرير */
+    }
+
+    .prediction {
+      margin-top: 20px;
+      width: 200px; /* تكبير الدائرة */
+      height: 200px; /* تكبير الدائرة */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%; /* تحويل إلى دائرة */
+      background-color: #ffd700; /* خلفية صفراء */
+      color: #121212; /* لون النص داخل الدائرة */
+      font-size: 30px; /* حجم النص داخل الدائرة */
+      font-weight: bold;
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); /* تأثير متوهج */
+      text-shadow: 0 0 10px #121212;
+    }
+  </style>
+</head>
+<body>
+  <h1>Prediction Bot</h1>
+  <button id="next-btn">🚀 Next</button>
+  <div class="prediction" id="prediction">--</div>
+
+  <script>
+    const button = document.getElementById('next-btn');
+    const predictionDiv = document.getElementById('prediction');
+
+    button.addEventListener('click', () => {
+      // توليد رقم عشوائي بين 1.10 و 1.90
+      const prediction = (Math.random() * (1.90 - 1.10) + 1.10).toFixed(2);
+      
+      // عرض التوقع داخل الدائرة
+      predictionDiv.textContent = prediction;
+    });
+  </script>
+</body>
+</html>
